@@ -8,11 +8,12 @@ import java.util.stream.Stream;
 public class StreamsPractice2 {
     public static void main(String[] args) {
         List<String> strings =(Arrays.asList("amitabha", "sakshi", "lahiri", "asish", "amar","nandhitha","sridhar"));
+        //3
         List<String> upperCaseString= strings.stream().map(
                 s -> s.toUpperCase(Locale.ROOT)
         ).collect(Collectors.toList());
         System.out.println(upperCaseString);
-
+        //odd numbers till 1 to 100
         List<Integer> res= Stream.iterate(1,i->i+1).limit(100).filter(num ->{
             if(num<2) return  false;
             for(int i=2;i*i<=num;i++){
@@ -27,28 +28,31 @@ public class StreamsPractice2 {
             return false;
         }).toList();
         System.out.println(nums);
-
+        //4
         List<Integer> evenNums=nums.stream().filter( num -> {
             if(num %2 ==0) return  true;
             else return false;
         }).collect(Collectors.toList());
         System.out.println(evenNums);
-
+        //5
         List<String> specificString=strings.stream().filter(s -> {
             if(s.charAt(0)=='a') return true;
             else return false;
         }).toList();
         System.out.println(specificString);
-
+        //6
         List<Integer> squares=nums.stream().map(a-> a*a).collect(Collectors.toList());
         System.out.println(squares);
 
+        //7
+
         String grads=strings.stream().reduce("",(a,b)->a+b+" ");
         System.out.println(grads);
-
+        // 8
         double avgDouble=nums.stream().mapToDouble(Integer::doubleValue).average().getAsDouble();
         System.out.println(avgDouble);
-
+        
+        //9
         boolean allPos=nums.stream().allMatch(a->{
             if(a%2==0) return true;
             return false;
