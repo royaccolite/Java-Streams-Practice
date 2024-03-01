@@ -1,4 +1,4 @@
-# Java-Streams-Practice
+# Java Streams Questions
 <ol>
 <li class="has-line-data" data-line-start="0" data-line-end="1">Write a Java Stream to find the sum of integers in a list.</li>
 <li class="has-line-data" data-line-start="1" data-line-end="2">Using a Stream, find the maximum element in a collection.</li>
